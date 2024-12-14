@@ -1,0 +1,30 @@
+.app-employee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .employee-name {
+
+  }
+
+  .employee-salary {
+    
+  }
+
+  .employee-btns {
+    display: flex;
+    gap: 8px;
+
+    button {
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #fefefe;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

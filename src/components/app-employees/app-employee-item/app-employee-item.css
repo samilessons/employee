@@ -4,11 +4,15 @@
   align-items: center;
 
   .employee-name {
-
+    font-size: 22px;
+    font-weight: 500;
   }
 
   .employee-salary {
-    
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
   }
 
   .employee-btns {

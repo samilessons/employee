@@ -1,10 +1,10 @@
 import "./app-employee-item.css"
 
-export default function AppEmployeeItem() {
+export default function AppEmployeeItem({name, salary}) {
   return (
     <div className="app-employee-item">
-      <h4 className="employee-name">John Smith</h4>
-      <h4 className="employee-salary">800 $</h4>
+      <h4 className="employee-name">{name}</h4>
+      <input type="text" className="employee-salary" defaultValue={salary + " $"} />
       <div className="employee-btns">
         <button>
           <svg fill="goldenrod" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

@@ -7,6 +7,39 @@ import AppEmployeeList from "../app-employees/app-employee-list/app-employee-lis
 import AppAddNewEmployee from "../app-add-employee/app-add-new-employee";
 
 export default function App() {
+  const data = [
+    {
+      id: 1,
+      name: "John Smith",
+      salary: 1000,
+      increase: false
+    },
+    {
+      id: 2,
+      name: "Alex Shepard",
+      salary: 950,
+      increase: false
+    },
+    {
+      id: 3,
+      name: "Tom Jackson",
+      salary: 645,
+      increase: false
+    },
+    {
+      id: 4,
+      name: "Adam Miller",
+      salary: 1245,
+      increase: false
+    },
+    {
+      id: 5,
+      name: "Mila Yohovich",
+      salary: 877,
+      increase: false
+    },
+  ];
+
   return (
     <div className="app">
       <AppInfo />
@@ -15,7 +48,7 @@ export default function App() {
         <AppSearch />
         <AppFilter/>
       </div>
-      <AppEmployeeList />
+      <AppEmployeeList data={data} />
       <AppAddNewEmployee/>
     </div>
   );

@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  margin-bottom: 16px;
 
   .employee-name {
     font-size: 22px;
@@ -13,6 +15,7 @@
     border: none;
     color: #fff;
     font-size: 22px;
+    width: 20%;
   }
 
   .employee-btns {
@@ -29,6 +32,16 @@
         width: 24px;
         height: 24px;
       }
+
+      &.fav {
+        display: none;
+      }
+    }
+  }
+
+  &.increased {
+    .employee-name, .employee-salary {
+      color: gold;
     }
   }
 }

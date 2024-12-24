@@ -3,15 +3,26 @@ import AppEmployeeItem from "../app-employee-item/app-employee-item";
 
 export default class AppEmployeeList extends Component {
   render() {
-    const { data } = this.props;
+    const { data, onDelete } = this.props;
     const employees = data.map(item => {
-      return <AppEmployeeItem key={item.id} {...item} />;
+      return <AppEmployeeItem
+        key={item.id}
+        {...item}
+        onDelete={() => onDelete(item.id)}
+      />;
     });
   
     return (
-      <div className="block">
-        {employees}
-      </div>
+      <>
+        {
+        data.length ? 
+          <div className="block">
+            {employees}
+          </div>
+          :
+          null
+        }
+      </>
     );
   }
 }

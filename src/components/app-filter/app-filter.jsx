@@ -3,11 +3,30 @@ import "./app-filter.css";
 
 export default class AppFilter extends Component {
   render() {
+    const { filter, onFilterSelect } = this.props;
+    const btnsData = [
+      { name: "all", label: "All Employees" },
+      { name: "rise", label: "Rise" },
+      { name: "salary", label: "Salary > 1000$" },
+    ];
+
+    const btns = btnsData.map(({ name, label }) => {
+      const active = filter === name;
+      return (
+        <button
+          type="button"
+          key={name}
+          className={active ? "active_btn" : null}
+          onClick={() => onFilterSelect(name)}
+        >
+          {label}
+        </button>
+      )
+    });
+
     return (
       <div className="app-filter">
-        <button className="active_btn" type="button">All Employees</button>
-        <button type="button">Promotion</button>
-        <button type="button">Salary &gt; 1000$</button>
+        {btns}
       </div>
     );
   }

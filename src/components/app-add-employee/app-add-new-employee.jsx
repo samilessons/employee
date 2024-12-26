@@ -16,13 +16,27 @@ export default class AppAddNewEmployee extends Component {
     });
   }
 
+  onAddHandler = (e) => {
+    e.preventDefault();
+    if (this.state.name.length < 3 || !this.state.salary) return;
+
+    this.props.onAdd(this.state.name, this.state.salary);
+    this.setState({
+      name: "",
+      salary: ""
+    });
+  }
+
   render() {
     const { name, salary } = this.state;
     return (
       <div className="add-new-employee block">
         <h3>Add new Employee</h3>
 
-        <form className="add-new-employee-group">
+        <form
+          className="add-new-employee-group"
+          onSubmit={this.onAddHandler}
+        >
           <input
             type="text"
             name="name"

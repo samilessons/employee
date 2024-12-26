@@ -3,12 +3,20 @@ import AppEmployeeItem from "../app-employee-item/app-employee-item";
 
 export default class AppEmployeeList extends Component {
   render() {
-    const { data, onDelete } = this.props;
+    const {
+      data,
+      onDelete,
+      onToggleIncrease,
+      onToggleRise
+    } = this.props;
+
     const employees = data.map(item => {
       return <AppEmployeeItem
         key={item.id}
         {...item}
         onDelete={() => onDelete(item.id)}
+        onToggleIncrease={() => onToggleIncrease(item.id)}
+        onToggleRise={() => onToggleRise(item.id)}
       />;
     });
   
@@ -20,7 +28,10 @@ export default class AppEmployeeList extends Component {
             {employees}
           </div>
           :
-          null
+          <div className="block">
+            <h2>Not found</h2>
+            <p>please try with another method. for example` John Smith</p>
+          </div>
         }
       </>
     );

@@ -6,8 +6,7 @@ export default class AppEmployeeList extends Component {
     const {
       data,
       onDelete,
-      onToggleIncrease,
-      onToggleRise
+      onToggleProp
     } = this.props;
 
     const employees = data.map(item => {
@@ -15,8 +14,7 @@ export default class AppEmployeeList extends Component {
         key={item.id}
         {...item}
         onDelete={() => onDelete(item.id)}
-        onToggleIncrease={() => onToggleIncrease(item.id)}
-        onToggleRise={() => onToggleRise(item.id)}
+        onToggleProp={(e) => onToggleProp(item.id, e.currentTarget.dataset.toggle)}
       />;
     });
   

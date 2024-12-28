@@ -59,19 +59,12 @@ export default class App extends Component {
     });
   }
 
-  onToggleIncrease = (id) => {
+  onToggleProp = (id, prop) => {
     this.setState(({ data }) => ({
       data: data.map(item => {
-        if (item.id === id) return { ...item, increase: !item.increase }
-        return item;
-      })
-    }));
-  }
-
-  onToggleRise = (id) => {
-    this.setState(({ data }) => ({
-      data: data.map(item => {
-        if (item.id === id) return { ...item, rise: !item.rise }
+        if (item.id === id) {
+          return { ...item, [prop]: !item[prop] };
+        }
         return item;
       })
     }));
@@ -112,8 +105,7 @@ export default class App extends Component {
       onEmployeeFilter,
       onEmployeeSearch,
       onDeleteEmployee,
-      onToggleIncrease,
-      onToggleRise,
+      onToggleProp,
       onAddNewEmployee
     } = this;
     const employees = data.length;
@@ -131,8 +123,7 @@ export default class App extends Component {
         <AppEmployeeList
           data={visibleData}
           onDelete={onDeleteEmployee}
-          onToggleIncrease={onToggleIncrease}
-          onToggleRise={onToggleRise}
+          onToggleProp={onToggleProp}
         />
         <AppAddNewEmployee onAdd={onAddNewEmployee} />
       </div>

@@ -44,4 +44,13 @@
       color: gold;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    .employee-salary {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }

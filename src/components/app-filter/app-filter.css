@@ -15,4 +15,8 @@
       background: rgb(249, 249, 26);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }

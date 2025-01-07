@@ -21,6 +21,11 @@ export default class AppEmployeeItem extends Component {
           onClick={onToggleProp}
           className="employee-name"
           data-toggle="rise"
+          style={{
+            margin: 0,
+            textTransform: "capitalize",
+            letterSpacing: 2
+          }}
         >
           {name}
         </h4>

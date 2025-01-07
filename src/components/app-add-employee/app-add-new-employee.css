@@ -22,5 +22,9 @@
       border: none;
       border-radius: 8px;
     }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 }
